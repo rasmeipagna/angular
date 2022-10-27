@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+<body ng-app>
+    <input type="text" ng-model="query" />
+    <select ng-model="order">
+        <option value="username">Organisation par nom</option>
+        <option value="content">Organisation par contenu</option>
+    </select>
+    <!-- Liste de prénom avec li qui se répète -->
+    <div ng-init="comments=[{username :'Marc', content:'Salut les gens'},{username : 'Jean', content:'Je suis content'},  {username:'John', content: 'first'}]">
+        
+        <div ng-repeat="comment in comments | filter:{content:query} | orderBy: order">
+            <p>
+                <strong>{{comment.username}}</strong><br />
+                {{comment.content}}
+            </p>
+        </div>
+        
+
+    <!-- Petite calculatrice -->
+    <!-- <input type="text" ng-model="nbre1" />
+    <input type="text" ng-model="nbre2" />  
+
+    {{"Somme : " + (nbre1 * 1 + nbre2 * 1 )}} -->
+
+
+
+    <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</body>
+</html>
