@@ -5,10 +5,14 @@
     </head>
 <body ng-app>
     <input type="text" ng-model="query" />
+    <select ng-model="order">
+        <option value="username">Organisation par nom</option>
+        <option value="content">Organisation par contenu</option>
+    </select>
     <!-- Liste de prénom avec li qui se répète -->
     <div ng-init="users=[{username :'Marc', content:'Salut les gens'},{username : 'Jean', content:'Je suis content'},  {username:'John', content: 'first'}]">
         <ul>
-            <li ng-repeat="user in users | filter:query | orderBy: '+username'">{{user | uppercase}}</li>
+            <li ng-repeat="user in users | filter:query | orderBy: order>{{user | uppercase}}</li>
         </ul>
 
     <!-- Petite calculatrice -->
