@@ -5,9 +5,19 @@
     </head>
 <body ng-app>
     <input type="text" ng-model="nbre1" />
+    <!-- Liste de prénom avec li qui se répète -->
+    <div ng-init="users=['Marc', 'Jean', 'John']">
+        <ul>
+            <li ng-repeat="users in users">{{users}}</li>
+        </ul>
+
+    <!-- Petite calculatrice -->
+    <!-- <input type="text" ng-model="nbre1" />
     <input type="text" ng-model="nbre2" />  
 
-    {{"Somme : " + (nbre1 * 1 + nbre2 * 1 )}}
+    {{"Somme : " + (nbre1 * 1 + nbre2 * 1 )}} -->
+
+
 
     <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </body>
