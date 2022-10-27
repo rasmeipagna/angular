@@ -8,9 +8,9 @@
     <!-- Liste de prénom avec li qui se répète -->
     <div ng-init="users=['Marc', 'Jean', 'John']">
         <ul>
-            <li ng-repeat="users in users">{{users}}</li>
+            <li ng-repeat="user in users">{{user} | uppercase}}</li>
         </ul>
-
+{{users | filter:'M'}}
     <!-- Petite calculatrice -->
     <!-- <input type="text" ng-model="nbre1" />
     <input type="text" ng-model="nbre2" />  
