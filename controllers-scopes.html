@@ -9,8 +9,8 @@
         <option value="username">Organisation par nom</option>
         <option value="content">Organisation par contenu</option>
     </select>
-    <!-- Liste de prénom avec li qui se répète -->
-    <div ng-init="comments=[{username :'Marc', content:'Salut les gens'},{username : 'Jean', content:'Je suis content'},  {username:'John', content: 'first'}]">
+    
+    <div ng-controller="CommentsCtrl">
         
         <div ng-repeat="comment in comments | filter:{content:query} | orderBy: order">
             <p>
@@ -29,5 +29,42 @@
 
 
     <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script>
+        function CommentsCtrl($scope){
+            $scope.comments = [
+  {
+    "username": "Harrell",
+    "city": "Duryea",
+    "email": "harrellbeck@centregy.com",
+    "content": "+1 Ad occaecat eu cillum culpa cillum cupidatat esse nostrud irure excepteur labore."
+  },
+  {
+    "username": "Tania",
+    "city": "Ellerslie",
+    "email": "taniabeck@centregy.com",
+    "content": "+1 Sunt deserunt consequat quis minim sit exercitation eiusmod enim cupidatat in consectetur eiusmod."
+  },
+  {
+    "username": "Concepcion",
+    "city": "Imperial",
+    "email": "concepcionbeck@centregy.com",
+    "content": "+1 Non ex quis do sunt magna ipsum do qui exercitation ea consectetur mollit in."
+  },
+  {
+    "username": "Maynard",
+    "city": "Fruitdale",
+    "email": "maynardbeck@centregy.com",
+    "content": "+1 Minim adipisicing reprehenderit consequat irure adipisicing laborum id nulla sint voluptate nulla sint aute minim."
+  },
+  {
+    "username": "Helga",
+    "city": "Taycheedah",
+    "email": "helgabeck@centregy.com",
+    "content": "+1 Ipsum et enim Lorem cillum irure irure."
+  }
+]
+        }
+    </script>
 </body>
 </html>
