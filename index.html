@@ -4,13 +4,13 @@
         <title></title>
     </head>
 <body ng-app>
-    <input type="text" ng-model="nbre1" />
+    <input type="text" ng-model="query" />
     <!-- Liste de prénom avec li qui se répète -->
     <div ng-init="users=['Marc', 'Jean', 'John']">
         <ul>
-            <li ng-repeat="user in users">{{user} | uppercase}}</li>
+            <li ng-repeat="user in users | filter:query">{{user | uppercase}}</li>
         </ul>
-{{users | filter:'M'}}
+
     <!-- Petite calculatrice -->
     <!-- <input type="text" ng-model="nbre1" />
     <input type="text" ng-model="nbre2" />  
