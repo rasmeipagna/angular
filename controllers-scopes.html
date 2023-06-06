@@ -3,7 +3,8 @@
     <head>
         <title></title>
     </head>
-<body ng-app>
+<body ng-app="MonApp">
+  <div ng-controller="CommentsCtrl">
     <input type="text" ng-model="query" />
     <select ng-model="order">
         <option value="username">Organisation par nom</option>
@@ -18,7 +19,7 @@
                 {{comment.content}}
             </p>
         </div>
-        
+      </div>  
 
     <!-- Petite calculatrice -->
     <!-- <input type="text" ng-model="nbre1" />
@@ -29,9 +30,9 @@
     <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
     <script>
-        function CommentsCtrl($scope){
-            
-            $scope.comments = [
+      var app = angular.module('MonApp', []);
+      app.controller('CommentsCtrl', function ($scope){
+        $scope.comments = [
               {
                 "username": "Harrell",
                 "city": "Duryea",
@@ -63,7 +64,11 @@
                 "content": "+1 Ipsum et enim Lorem cillum irure irure."
               }
             ];
-                    }
+                    
+      });
+       
+            
+           
     </script>
 </body>
 </html>
