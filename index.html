@@ -4,37 +4,17 @@
         <title></title>
     </head>
 <body ng-app="MonApp">
-  <div ng-controller="CommentsCtrl">
-    <input type="text" ng-model="query" />
-    <select ng-model="order">
-        <option value="username">Organisation par nom</option>
-        <option value="content">Organisation par contenu</option>
-    </select>
-    
-    <div ng-controller="CommentsCtrl">
-        
-        <div ng-repeat="comment in comments | filter:{content:query} | orderBy: order">
-            <p>
-                <strong>{{comment.username}}</strong><br />
-                {{comment.content}}
-            </p>
-        </div>
-    </div>  
-  </div>
-    <!-- Petite calculatrice -->
-    <!-- <input type="text" ng-model="nbre1" />
-    <input type="text" ng-model="nbre2" />  
-
-    {{"Somme : " + (nbre1 * 1 + nbre2 * 1 )}} -->
-
+  
+    <div ng-view></div>
     <script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script  src="http://code.angularjs.org/1.2.14/angular-route.min.js"></script>
 
     <script>
-      var app = angular.module('MonApp', []);
+      var app = angular.module('MonApp', [ngRoute]);
       app.config(function($routeProvider){
         $routeProvider
-          .when('/', {templateUrl: 'partials/home.html'})
-          .when('/comments'), {}
+          .when('/', {templateUrl: 'partials/home.html', controller: 'PostsCtrl'})
+          .when('/comments'), {templateUrl:'partials/comments.html'}
           .otherwise({redirectTo : '/'})
       });
       app.controller('CommentsCtrl', function ($scope){
